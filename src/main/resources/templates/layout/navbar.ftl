@@ -11,7 +11,7 @@
 
     <ul class="nav navbar-nav float-xs-right">
         <li class="nav-item">
-            <a class="nav-link" href="#">Sing in</a>
+            <a class="nav-link" href="/account/login">Sing in</a>
         </li>
     </ul>
 </nav>

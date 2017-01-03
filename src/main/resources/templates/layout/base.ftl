@@ -3,7 +3,7 @@
         <#include "header.ftl">
         <body>
             <#include "navbar.ftl">
-            <div class="container"
+            <div class="container">
                 <#nested>
             </div>
         </body>
