@@ -1,8 +1,10 @@
 package com.pzeszko.cleansound;
 
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.boot.autoconfigure.freemarker.FreeMarkerAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 
 /**
@@ -14,6 +16,7 @@ import org.springframework.context.annotation.ComponentScan;
 })
 @SpringBootApplication
 @ComponentScan("com.pzeszko.cleansound")
+@EnableAutoConfiguration(exclude = {FreeMarkerAutoConfiguration.class})
 public class CleansoundApplication {
     public static void main(String[] args) {
         SpringApplication.run(CleansoundApplication.class, args);

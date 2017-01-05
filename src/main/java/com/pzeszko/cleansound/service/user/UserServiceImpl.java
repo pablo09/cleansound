@@ -1,6 +1,7 @@
-package com.pzeszko.cleansound.service;
+package com.pzeszko.cleansound.service.user;
 
 import com.pzeszko.cleansound.dto.UserDto;
+import com.pzeszko.cleansound.exception.NotFoundException;
 import com.pzeszko.cleansound.model.User;
 import com.pzeszko.cleansound.repository.UserRepository;
 import lombok.AllArgsConstructor;
@@ -25,6 +26,11 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<User> findAll() {
         return userRepository.findAll();
+    }
+
+    @Override
+    public User findUser(String email) {
+        return userRepository.findOneByEmail(email).orElseThrow(NotFoundException::new);
     }
 
     @Override

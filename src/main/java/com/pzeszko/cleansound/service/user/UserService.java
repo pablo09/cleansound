@@ -1,4 +1,4 @@
-package com.pzeszko.cleansound.service;
+package com.pzeszko.cleansound.service.user;
 
 import com.pzeszko.cleansound.dto.UserDto;
 import com.pzeszko.cleansound.model.User;
@@ -11,6 +11,8 @@ import java.util.List;
 public interface UserService {
 
     List<User> findAll();
+
+    User findUser(String email);
 
     User addUser(UserDto user);
 }
