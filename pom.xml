@@ -13,6 +13,7 @@
         <dozer.version>5.5.1</dozer.version>
         <lombok.version>1.16.10</lombok.version>
         <freemarker.version>2.3.23</freemarker.version>
+        <jsr305.version>3.0.0</jsr305.version>
     </properties>
 
     <parent>
@@ -57,6 +58,10 @@
 
         <!-- DATABASE -->
         <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-core</artifactId>
+        </dependency>
+        <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
         </dependency>
@@ -73,6 +78,12 @@
             <version>${freemarker.version}</version>
         </dependency>
 
+        <!-- Need for Nullable -->
+        <dependency>
+            <groupId>com.google.code.findbugs</groupId>
+            <artifactId>jsr305</artifactId>
+            <version>${jsr305.version}</version>
+        </dependency>
     </dependencies>
 
 </project>
