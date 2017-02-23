@@ -1,1 +1,1 @@
-INSERT INTO USER (ID, VERSION, EMAIL, PASSWORD, ROLE) VALUES (1, 0, 'user@user.com', 'pass', 'USER');
+INSERT INTO USERS (ID, VERSION, EMAIL, PASSWORD, ROLE, ACTIVE) VALUES (1, 0, 'user@user.com', 'pass', 'USER', 'N');

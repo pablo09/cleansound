@@ -15,4 +15,6 @@ public interface UserService {
     User findUser(String email);
 
     User addUser(UserDto user);
+
+    void updateUser(UserDto user, User currentUser);
 }

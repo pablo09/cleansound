@@ -1,0 +1,7 @@
+Przejrzec:
+
+http://websecurity.pl/co-oferuje-nam-owasp/
+https://www.owasp.org/images/2/2e/OWASP_NL_Top_Ten_Web_Application_Vulnerabilities_in_J2EE.pdf
+
+TOPT- projekt
+napisac do piotrka zeby zgadac sie na skype i omowic

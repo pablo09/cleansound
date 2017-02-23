@@ -20,11 +20,14 @@ import java.io.IOException;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
+import java.util.Arrays;
 import java.util.Locale;
 import java.util.Properties;
 
 @Configuration
 public class CustomFreemarkerConfiguration extends WebMvcConfigurerAdapter {
+
+
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
@@ -62,6 +65,7 @@ public class CustomFreemarkerConfiguration extends WebMvcConfigurerAdapter {
     public TaglibFactory taglibFactory(ServletContext servletContext) throws IOException, TemplateException {
         FreeMarkerConfigurer freemarkerConfig = configFreeMarkerConfigurer(servletContext);
         TaglibFactory taglibFactory = freemarkerConfig.getTaglibFactory();
+        taglibFactory.setClasspathTlds(Arrays.asList("/security.tld"));
         taglibFactory.setObjectWrapper(freemarker.template.Configuration.getDefaultObjectWrapper(freemarker.template.Configuration.getVersion()));
         return taglibFactory;
     }

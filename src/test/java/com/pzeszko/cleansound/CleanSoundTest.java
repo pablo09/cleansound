@@ -1,21 +1,19 @@
 package com.pzeszko.cleansound;
 
-import org.springframework.boot.SpringApplication;
+import com.pzeszko.cleansound.config.SecurityConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Import;
 
 /**
- * Created by Pawel on 2017-01-02.
- */
-
+ * Created by Pawel on 2017-02-16.
+*/
 @EntityScan(basePackageClasses = {
-        CleansoundApplication.class
+        CleansoundApplication.class,
 })
 @SpringBootApplication
+@Import({SecurityConfiguration.class})
 @ComponentScan("com.pzeszko.cleansound")
-public class CleansoundApplication {
-    public static void main(String[] args) {
-        SpringApplication.run(CleansoundApplication.class, args);
-    }
+public class CleanSoundTest {
 }

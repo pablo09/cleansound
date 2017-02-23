@@ -14,6 +14,10 @@ public class CurrentUser extends org.springframework.security.core.userdetails.U
         return user;
     }
 
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     public Long getId() {
         return user.getId();
     }

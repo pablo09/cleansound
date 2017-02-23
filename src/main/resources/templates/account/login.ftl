@@ -5,7 +5,7 @@
 <form class="form-signin" action="/account/login" method="post">
     <h2 class="form-signin-heading">Please sign in</h2>
     <label for="inputEmail" class="sr-only">Email address</label>
-    <input type="email" id="email" name="email" class="form-control" placeholder="Email address" required="" autofocus="">
+    <input id="email" name="email" class="form-control" placeholder="Email address" required="" autofocus="">
     <label for="email" class="sr-only">Password</label>
     <input type="password" id="password" name="password" class="form-control" placeholder="Password" required="">
     <div class="checkbox">
