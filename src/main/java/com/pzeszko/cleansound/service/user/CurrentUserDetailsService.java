@@ -9,11 +9,17 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.PostConstruct;
+
 @Service
 @Slf4j
 public class CurrentUserDetailsService implements UserDetailsService {
     private final UserService userService;
 
+    @PostConstruct
+    public void test() {
+
+    }
     @Autowired
     public CurrentUserDetailsService(UserService userService) {
         this.userService = userService;

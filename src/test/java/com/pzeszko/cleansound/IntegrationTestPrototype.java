@@ -15,7 +15,6 @@ import java.io.IOException;
  * Base class for integration test
  */
 @RunWith(SpringRunner.class)
-//@ActiveProfiles("dev")
 @Transactional()
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public abstract class IntegrationTestPrototype {

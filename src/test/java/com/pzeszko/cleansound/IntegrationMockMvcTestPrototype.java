@@ -1,10 +1,12 @@
 package com.pzeszko.cleansound;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.pzeszko.cleansound.utils.FakeCsrfRequestFilter;
 import org.junit.Before;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener;
 import org.springframework.test.context.TestExecutionListeners;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -25,19 +27,25 @@ import static org.springframework.security.test.web.servlet.setup.SecurityMockMv
 public abstract class IntegrationMockMvcTestPrototype {
 
     @Autowired
-    protected ObjectMapper objectMapper;
-
-    @Autowired
     protected WebApplicationContext context;
 
+    @Autowired
+    protected FakeCsrfRequestFilter filter;
+
     protected MockMvc mockMvc;
+    protected User loggedUser;
 
     @Before
     public void setUp(){
-        this.mockMvc = MockMvcBuilders
+        mockMvc = MockMvcBuilders
                 .webAppContextSetup(context)
+                .addFilter(filter)
                 .apply(springSecurity())
                 .build();
+
+        loggedUser =  (User)  SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+
     }
+
 
 }
